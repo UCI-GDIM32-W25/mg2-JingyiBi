@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class player : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private Rigidbody2D _rigidbody;
+    private bool isGrounded;
+        void Start()
     {
-        
+        _rigidbody = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space)&& isGrounded)
+        {
+            _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, 4.0f);
+            isGrounded = false;
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true;
+        }
     }
 }

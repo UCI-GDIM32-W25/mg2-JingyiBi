@@ -1,11 +1,4 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/7qg5CCgx)
 # HW2
 ## Devlog
-Write your Devlog here!
-
-
-## Open-Source Assets
-If you added any other outside assets, list them here!
-- [Sprout Lands sprite asset pack](https://cupnooble.itch.io/sprout-lands-asset-pack) - rabbit and item sprites
-- [Pixel Penguin 32x32 Asset pack](https://legends-games.itch.io/pixel-penguin-32x32-asset-pack) - penguin sprites
-- [Coins 2D](https://artist2d3d.itch.io/2d) - coin sprites
+This plan for MG2 connects directly to the code by using a Spawner (Class) to manage the CoinSpawner (GameObject) in the Unity scene. The SpawnGroup() (Method) creates Coin Prefabs (GameObject) that move toward the player using transform.Translate in the Update() (Method). When a collision is detected, OnTriggerEnter2D (Method) updates the ScoreText (GameObject) via the UI (Class). One major change was randomizing the Y-axis spawn position to ensure the player must move up and down, making the game more engaging. I also had to set the Gravity Scale to 0 on the coin's Rigidbody 2D to prevent it from falling.
